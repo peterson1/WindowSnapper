@@ -125,6 +125,13 @@
           <ButtonText>Invoke SnapWindowToPos9</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos0" priority="0x0100" type="Button">
+        <Parent guid="guidSnapWindowLeftCmdPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages10" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke SnapWindowToPos0</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -144,12 +151,12 @@
       <Bitmap guid="guidImages7" href="Resources\SnapWindowToPos7.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages8" href="Resources\SnapWindowToPos8.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages9" href="Resources\SnapWindowToPos9.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidImages10" href="Resources\SnapWindowToPos0.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
   
   <KeyBindings>
-    <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="SnapWindowLeftCmdId" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD0" />
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos1" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD1" />
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos2" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD2" />
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos3" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD3" />
@@ -159,6 +166,7 @@
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos7" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD7" />
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos8" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD8" />
     <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos9" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD9" />
+    <KeyBinding guid="guidSnapWindowLeftCmdPackageCmdSet" id="cmdidSnapWindowToPos0" editor="guidVSStd97" mod1="Control" key1="w" mod2="Control" key2="VK_NUMPAD0" />
   </KeyBindings>
   
   
@@ -170,15 +178,16 @@
     <GuidSymbol name="guidSnapWindowLeftCmdPackageCmdSet" value="{d2773343-8dc8-4530-8d11-0ce92a2d31ec}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="SnapWindowLeftCmdId" value="0x0100" />
-      <IDSymbol value="1" name="cmdidSnapWindowToPos1" />
-      <IDSymbol value="2" name="cmdidSnapWindowToPos2" />
-      <IDSymbol value="3" name="cmdidSnapWindowToPos3" />
-      <IDSymbol value="4" name="cmdidSnapWindowToPos4" />
-      <IDSymbol value="5" name="cmdidSnapWindowToPos5" />
-      <IDSymbol value="6" name="cmdidSnapWindowToPos6" />
-      <IDSymbol value="7" name="cmdidSnapWindowToPos7" />
-      <IDSymbol value="8" name="cmdidSnapWindowToPos8" />
-      <IDSymbol value="9" name="cmdidSnapWindowToPos9" />
+      <IDSymbol value= "1" name="cmdidSnapWindowToPos1" />
+      <IDSymbol value= "2" name="cmdidSnapWindowToPos2" />
+      <IDSymbol value= "3" name="cmdidSnapWindowToPos3" />
+      <IDSymbol value= "4" name="cmdidSnapWindowToPos4" />
+      <IDSymbol value= "5" name="cmdidSnapWindowToPos5" />
+      <IDSymbol value= "6" name="cmdidSnapWindowToPos6" />
+      <IDSymbol value= "7" name="cmdidSnapWindowToPos7" />
+      <IDSymbol value= "8" name="cmdidSnapWindowToPos8" />
+      <IDSymbol value= "9" name="cmdidSnapWindowToPos9" />
+      <IDSymbol value="10" name="cmdidSnapWindowToPos0" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{1ceeed10-c5a9-4449-b908-5922277b486f}">
@@ -263,6 +272,15 @@
     </GuidSymbol>
   
     <GuidSymbol value="{84a1c8c7-aa2f-4c1c-81b0-48fb767b6001}" name="guidImages9">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{5298b031-8bda-45c6-aa18-db83bf68f20c}" name="guidImages10">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

@@ -79,6 +79,7 @@ namespace MainVSIX
             await SnapWindowToPos7.InitializeAsync(this);
             await SnapWindowToPos8.InitializeAsync(this);
             await SnapWindowToPos9.InitializeAsync(this);
+            await SnapWindowToPos0.InitializeAsync(this);
         }
 
         #endregion

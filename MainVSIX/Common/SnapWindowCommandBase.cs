@@ -1,4 +1,5 @@
 ﻿using CommonTools.Lib11.ExceptionTools;
+using CommonTools.Lib11.StringTools;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
@@ -12,21 +13,23 @@ namespace MainVSIX.Common
         public const string CMDSET_GUID = "d2773343-8dc8-4530-8d11-0ce92a2d31ec";
         private AsyncPackage _vsPkg;
         private int          _posKey;
+        private int          _screenIdx;
 
 
-        public SnapWindowCommandBase(int positionKey, AsyncPackage vsPackage, OleMenuCommandService commandSvc)
+        public SnapWindowCommandBase(int commandId, int positionKey, int displayIndex, AsyncPackage vsPackage, OleMenuCommandService commandSvc)
         {
             _posKey    = positionKey;
+            _screenIdx = displayIndex;
             _vsPkg     = vsPackage  ?? throw new ArgumentNullException(nameof(vsPackage));
             commandSvc = commandSvc ?? throw new ArgumentNullException(nameof(commandSvc));
-            commandSvc.AddCommand(CreateMenuCommand());
+            commandSvc.AddCommand(CreateMenuCommand(commandId));
 
         }
 
 
-        private OleMenuCommand CreateMenuCommand()
+        private OleMenuCommand CreateMenuCommand(int commandId)
         {
-            var menuCmdID = new CommandID(new Guid(CMDSET_GUID), _posKey);
+            var menuCmdID = new CommandID(new Guid(CMDSET_GUID), commandId);
             var menuItem  = new OleMenuCommand(this.Execute, menuCmdID);
             menuItem.BeforeQueryStatus += new EventHandler(OnBeforeQueryStatus);
             return menuItem;
@@ -61,14 +64,19 @@ namespace MainVSIX.Common
                 return;
             }
 
+            bool ok = false;
             try
             {
-                win.SnapToPosition(_posKey, 1);
+                ok = win.SnapToPosition(_posKey, _screenIdx);
             }
             catch (Exception ex)
             {
                 Alert(ex.Info(true, true));
             }
+
+            if (!ok) Alert($"Invalid parameters."
+                    + $"{L.F}Position key: [{_posKey}]"
+                    + $"{L.f}Display index: [{_screenIdx}]");
         }
 
 

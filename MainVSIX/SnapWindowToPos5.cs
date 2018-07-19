@@ -6,8 +6,8 @@ namespace MainVSIX
 {
     internal sealed class SnapWindowToPos5 : SnapWindowCommandBase
     {
-        private SnapWindowToPos5(int positionKey, AsyncPackage package, OleMenuCommandService commandService)
-            : base(positionKey, package, commandService)
+        private SnapWindowToPos5(int positionKey, int displayIndex, AsyncPackage package, OleMenuCommandService commandService)
+            : base(5, positionKey, displayIndex, package, commandService)
         {
         }
 
@@ -16,6 +16,6 @@ namespace MainVSIX
 
 
         public static async Task InitializeAsync(AsyncPackage pkg)
-            => Instance = new SnapWindowToPos5(5, pkg, await pkg.GetMenuService());
+            => Instance = new SnapWindowToPos5(5, 1, pkg, await pkg.GetMenuService());
     }
 }
