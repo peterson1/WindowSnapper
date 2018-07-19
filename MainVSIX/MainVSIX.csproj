@@ -55,6 +55,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\AsyncPackageExtensions.cs" />
+    <Compile Include="Common\HashLib\Crypto\SHA0.cs" />
+    <Compile Include="Common\HashLib\Crypto\SHA1.cs" />
+    <Compile Include="Common\HashLib\Extensions\ArrayExtensions.cs" />
+    <Compile Include="Common\HashLib\Extensions\Converters.cs" />
+    <Compile Include="Common\HashLib\Hash.cs" />
+    <Compile Include="Common\HashLib\HashBuffer.cs" />
+    <Compile Include="Common\HashLib\HashCryptoNotBuildIn.cs" />
+    <Compile Include="Common\HashLib\HashResult.cs" />
+    <Compile Include="Common\HashLib\IHash.cs" />
+    <Compile Include="Common\HashLib\IHashInfo.cs" />
+    <Compile Include="Common\Lib11Tools\CollectionTools\DictionaryExtensions.cs" />
+    <Compile Include="Common\Lib11Tools\CollectionTools\IEnumerableExtensions.cs" />
+    <Compile Include="Common\Lib11Tools\CollectionTools\ObservableCollectionExtensions.cs" />
+    <Compile Include="Common\Lib11Tools\CollectionTools\WrappingIterator.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\BadKeyException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\DuplicateRecordsException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\ErrorMessageTrimmer.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\FaultFactory.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\FaultFactory_Concise.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\IntrusionAttemptException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\InvalidDeletionException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\InvalidInsertionException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\InvalidStateException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\RecordNotFoundException.cs" />
+    <Compile Include="Common\Lib11Tools\ExceptionTools\UnexpectedResponseException.cs" />
+    <Compile Include="Common\Lib11Tools\StringTools\JsonFormatters.cs" />
+    <Compile Include="Common\Lib11Tools\StringTools\StringConstants.cs" />
+    <Compile Include="Common\Lib11Tools\StringTools\StringExtensions.cs" />
+    <Compile Include="Common\Lib11Tools\StringTools\StringParsers.cs" />
     <Compile Include="Common\SnapWindowCommandBase.cs" />
     <Compile Include="Common\WindowToScreenSnapper.cs" />
     <Compile Include="Core\DisplayProperties.cs" />

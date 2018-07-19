@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using CommonTools.Lib11.ExceptionTools;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.ComponentModel.Design;
@@ -60,10 +61,14 @@ namespace MainVSIX.Common
                 return;
             }
 
-            //win.IsFloating = true;
-            //win.Left = _posKey * 300;
-            //win.Top = -1080;
-            win.SnapToPosition(_posKey, 1);
+            try
+            {
+                win.SnapToPosition(_posKey, 1);
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Info(true, true));
+            }
         }
 
 
@@ -74,10 +79,10 @@ namespace MainVSIX.Common
         }
 
 
-        private void Alert(string msg) => VsShellUtilities.ShowMessageBox(
+        private void Alert(string message) => VsShellUtilities.ShowMessageBox(
                 this._vsPkg,
-                msg,
-                "SnapWindowLeftCmd",
+                message,
+                $"Snap to Window Position [{_posKey}]",
                 OLEMSGICON.OLEMSGICON_INFO,
                 OLEMSGBUTTON.OLEMSGBUTTON_OK,
                 OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
