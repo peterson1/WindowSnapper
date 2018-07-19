@@ -24,7 +24,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MainVSIX</RootNamespace>
-    <AssemblyName>MainVSIX</AssemblyName>
+    <AssemblyName>WindowSnapper</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
@@ -89,6 +89,9 @@
     <Compile Include="Core\DisplayProperties.cs" />
     <Compile Include="Core\VerticalScreenSplitter.cs" />
     <Compile Include="Core\WindowProperties.cs" />
+    <Compile Include="DisplayPropertiesOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SnapWindowLeftCmd.cs" />
     <Compile Include="SnapWindowLeftCmdPackage.cs" />
@@ -114,6 +117,7 @@
     <Content Include="index.html" />
     <VSCTCompile Include="SnapWindowLeftCmdPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
     </VSCTCompile>
     <Content Include="Resources\SnapWindowLeftCmd.png" />
     <Content Include="Resources\SnapWindowLeftCmdPackage.ico" />

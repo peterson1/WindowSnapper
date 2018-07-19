@@ -64,10 +64,13 @@ namespace MainVSIX.Common
                 return;
             }
 
+            var opts = _vsPkg.GetDialogPage(typeof(DisplayPropertiesOptionPage)) as DisplayPropertiesOptionPage;
+            //opts.di
+
             bool ok = false;
             try
             {
-                ok = win.SnapToPosition(_posKey, _screenIdx);
+                ok = win.SnapToPosition(_posKey, _screenIdx, opts);
             }
             catch (Exception ex)
             {

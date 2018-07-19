@@ -37,6 +37,7 @@ namespace MainVSIX
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(SnapWindowLeftCmdPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
+    [ProvideOptionPage(typeof(DisplayPropertiesOptionPage), "Window Snapper", "Display Properties", 0, 0, true)]
     public sealed class SnapWindowLeftCmdPackage : AsyncPackage
     {
         /// <summary>
