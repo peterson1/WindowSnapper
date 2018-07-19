@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MainVSIX.Common
 {
-    internal class SnapWindowToPosBase
+    internal class SnapWindowCommandBase
     {
         public const string CMDSET_GUID = "d2773343-8dc8-4530-8d11-0ce92a2d31ec";
         private AsyncPackage _vsPkg;
         private int          _posKey;
 
 
-        public SnapWindowToPosBase(int positionKey, AsyncPackage vsPackage, OleMenuCommandService commandSvc)
+        public SnapWindowCommandBase(int positionKey, AsyncPackage vsPackage, OleMenuCommandService commandSvc)
         {
             _posKey    = positionKey;
             _vsPkg     = vsPackage  ?? throw new ArgumentNullException(nameof(vsPackage));
@@ -60,9 +60,10 @@ namespace MainVSIX.Common
                 return;
             }
 
-            win.IsFloating = true;
-            win.Left = _posKey * 300;
-            win.Top = -1080;
+            //win.IsFloating = true;
+            //win.Left = _posKey * 300;
+            //win.Top = -1080;
+            win.SnapToPosition(_posKey, 1);
         }
 
 

@@ -72,6 +72,13 @@ namespace MainVSIX
             await SnapWindowLeftCmd.InitializeAsync(this);
             await SnapWindowToPos1.InitializeAsync(this);
             await SnapWindowToPos2.InitializeAsync(this);
+            await SnapWindowToPos3.InitializeAsync(this);
+            await SnapWindowToPos4.InitializeAsync(this);
+            await SnapWindowToPos5.InitializeAsync(this);
+            await SnapWindowToPos6.InitializeAsync(this);
+            await SnapWindowToPos7.InitializeAsync(this);
+            await SnapWindowToPos8.InitializeAsync(this);
+            await SnapWindowToPos9.InitializeAsync(this);
         }
 
         #endregion

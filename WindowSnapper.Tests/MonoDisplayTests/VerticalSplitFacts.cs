@@ -10,28 +10,24 @@ namespace WindowSnapper.Tests.MonoDisplayTests
         [Fact(DisplayName = "800x600 / 1")]
         public void TestMethod00001()
         {
-            var sut = new VerticalScreenSplitter(1, (800, 600));
+            var sut = new VerticalScreenSplitter
+                (Display.Define(800, 600, 0, 0, 1, 0));
+
             sut.PostionAt(1).Left  .Should().Be(0);
             sut.PostionAt(1).Top   .Should().Be(0);
             sut.PostionAt(1).Width .Should().Be(800);
             sut.PostionAt(1).Height.Should().Be(600);
 
-            sut.PostionAt(2).Left  .Should().Be(0);
-            sut.PostionAt(2).Top   .Should().Be(0);
-            sut.PostionAt(2).Width .Should().Be(800);
-            sut.PostionAt(2).Height.Should().Be(600);
-
-            sut.PostionAt(3).Left  .Should().Be(0);
-            sut.PostionAt(3).Top   .Should().Be(0);
-            sut.PostionAt(3).Width .Should().Be(800);
-            sut.PostionAt(3).Height.Should().Be(600);
+            sut.PostionAt(2).Should().BeNull();
         }
 
 
         [Fact(DisplayName = "800x600 / 3")]
         public void TestMethod00002()
         {
-            var sut = new VerticalScreenSplitter(3, (800, 600));
+            var sut = new VerticalScreenSplitter
+                (Display.Define(800, 600, 0, 0, 3, 0));
+
             sut.PostionAt(1).Left  .Should().Be(0);
             sut.PostionAt(1).Top   .Should().Be(0);
             sut.PostionAt(1).Width .Should().Be(800 / 3);
