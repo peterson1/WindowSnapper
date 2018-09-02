@@ -16,7 +16,11 @@ namespace MainVSIX.Common
             var props  = splitr.PostionAt(positionKey, displayIndex);
             if (props == null) return false;
 
-            win.IsFloating = true;
+            try
+            {
+                win.IsFloating = true;
+            }
+            catch { }
             win.Left       = props.Left;
             win.Top        = props.Top;
             win.Width      = props.Width - opt.WindowLeftMargin 
